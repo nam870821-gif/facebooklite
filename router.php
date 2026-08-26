@@ -8,8 +8,7 @@ if ($uri === '/') {
 
 $routes = [
     '/trang-chu' => '/index.php',
-    '/dang-nhap' => '/index.php',
-    '/dang-nhap-he-thong' => '/system/dang-nhap-he-thong.php',
+    '/dang-nhap' => '/log/dang-nhap-he-thong.php',
     '/profile' => '/profile.php',
     '/confirm-account' => '/confirm-account.php',
 ];
