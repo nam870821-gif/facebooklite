@@ -93,6 +93,7 @@ $top3 = '<span class="verify-icon" data-toggle="tooltip" data-placement="top" ti
 
 $verify = verifed($confirm_status);
 function verifed($confirm_status){
+$verify = '';
 $verifed = '<span class="verify-icon" data-toggle="tooltip" data-placement="top" title="Facebook đã xác nhận đây là trang cá nhân thật của người của công chúng này."><svg height="13" width="13" viewBox="0 0 512.063 512.063"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 0" fill="#2196f3"/><path d="m385.75 201.75-138.667969 138.664062c-4.160156 4.160157-9.621093 6.253907-15.082031 6.253907s-10.921875-2.09375-15.082031-6.253907l-69.332031-69.332031c-8.34375-8.339843-8.34375-21.824219 0-30.164062 8.339843-8.34375 21.820312-8.34375 30.164062 0l54.25 54.25 123.585938-123.582031c8.339843-8.34375 21.820312-8.34375 30.164062 0 8.339844 8.339843 8.339844 21.820312 0 30.164062zm0 0" fill="#fafafa"/></svg></span>';
 $verify_admin = '<span class="verify-feed"><i data-toggle="tooltip" data-placement="top" title="Facebook đã xác nhận đây là trang cá nhân thật của người của công chúng này."></i></span>';
 $verify_admin2 = '<span class="verify-care"><i data-toggle="tooltip" data-placement="top" title="Huy hiệu độc quyền dành riêng cho admin."></i> </span>';
@@ -163,7 +164,7 @@ function formatnumber($so){
     }
 #Khu vục Quảng cáo
 #ẢNH
-if($username == $asdmin){
+if($username == $admin){
 $ads_2x = '<div align="center" class="mt-1 mb-1 d-none d-lg-block">
                 <!-- Ngang(1) -->
                 <ins class="adsbygoogle" style="display:inline-block;width:500px;height:150px" data-ad-client="ca-pub-8563154114869107" data-ad-slot="1209774312" data-ad-format="" data-full-width-responsive="false"></ins>
