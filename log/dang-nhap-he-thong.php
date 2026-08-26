@@ -4,8 +4,8 @@ if(isset($_SESSION['username'])){
 	header('location: trang-chu');
 	die();
 }
-include('../config.php');
-include('../main/header.php');
+include(__DIR__.'/../config.php');
+include(__DIR__.'/../main/header.php');
 ?>
 <div class="modal fade show" id="dangky" style="margin-top:px;" role="dialog" aria-modal="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -205,4 +205,4 @@ $('#sinup').click(function(){
   })
 })*/
 </script>
-<?php include("../main/footer.php"); ?>
+<?php include(__DIR__."/../main/footer.php"); ?>
