@@ -1,16 +1,16 @@
 <?php
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-if ($uri === '/') {
-    require __DIR__ . '/index.php';
-    return true;
-}
-
 $routes = [
+    '/' => '/index.php',
     '/trang-chu' => '/index.php',
     '/dang-nhap' => '/log/dang-nhap-he-thong.php',
-    '/profile' => '/profile.php',
-    '/confirm-account' => '/confirm-account.php',
+    '/dang-xuat' => '/log/dang-xuat.php',
+    '/xac-nhan-tai-khoan' => '/confirm-account.php',
+    '/settings' => '/core/setting.php',
+    '/admin' => '/core/admin.php',
+    '/support' => '/core/support.php',
+    '/photo' => '/photo.php',
 ];
 
 if (isset($routes[$uri])) {
