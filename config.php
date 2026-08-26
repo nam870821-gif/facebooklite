@@ -30,24 +30,45 @@ $avt_macdinh = "data/none.jpg";
 $bia_macdinh = "img/bg.jpg";
 $modal_mode = 0; #TẮ BẬT MODAL
 #-------GET INFO USER---------------
-$select = "SELECT * FROM account WHERE username = '".$_SESSION['username']."'";
-$kunloc_data = mysqli_fetch_object(mysqli_query($kunloc,$select));
-$id_user = $kunloc_data->id;
-$username = $kunloc_data->username;
-$fullname = $kunloc_data->fullname;
-$avatar = $kunloc_data->avatar;
-$bia = $kunloc_data->background;
-$phone = $kunloc_data->phone;
-$email = $kunloc_data->email;
-$followers = $kunloc_data->followers;
-$noi_o_hien_tai = $kunloc_data->noi_o_hien_tai;
-$noi_lam_viec = $kunloc_data->noi_lam_viec;
-$tinh_trang = $kunloc_data->tinh_trang;
-$access_token = $kunloc_data->token;
-$ngay_tham_gia = $kunloc_data->ngay_tham_gia;
-$confirm_status = $kunloc_data->confirm_status;
-$trangthai = $kunloc_data->trangthai;
-$veri_code = $kunloc_data->veri_code;
+$id_user = '';
+$username = '';
+$fullname = '';
+$avatar = '';
+$bia = '';
+$phone = '';
+$email = '';
+$followers = '';
+$noi_o_hien_tai = '';
+$noi_lam_viec = '';
+$tinh_trang = '';
+$access_token = '';
+$ngay_tham_gia = '';
+$confirm_status = '';
+$trangthai = '';
+$veri_code = '';
+
+if(!empty($_SESSION['username'])){
+    $select = "SELECT * FROM account WHERE username = '".mysqli_real_escape_string($kunloc, $_SESSION['username'])."'";
+    $kunloc_data = mysqli_fetch_object(mysqli_query($kunloc,$select));
+    if($kunloc_data){
+        $id_user = $kunloc_data->id;
+        $username = $kunloc_data->username;
+        $fullname = $kunloc_data->fullname;
+        $avatar = $kunloc_data->avatar;
+        $bia = $kunloc_data->background;
+        $phone = $kunloc_data->phone;
+        $email = $kunloc_data->email;
+        $followers = $kunloc_data->followers;
+        $noi_o_hien_tai = $kunloc_data->noi_o_hien_tai;
+        $noi_lam_viec = $kunloc_data->noi_lam_viec;
+        $tinh_trang = $kunloc_data->tinh_trang;
+        $access_token = $kunloc_data->token;
+        $ngay_tham_gia = $kunloc_data->ngay_tham_gia;
+        $confirm_status = $kunloc_data->confirm_status;
+        $trangthai = $kunloc_data->trangthai;
+        $veri_code = $kunloc_data->veri_code;
+    }
+}
 #------ CẤU HÌNH EMAIL CONFIRM -------------------
 $form = $domain_name;
 $email_nhan = $email;
