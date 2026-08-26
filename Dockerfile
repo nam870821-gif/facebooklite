@@ -6,6 +6,6 @@ COPY . /var/www/html/
 
 WORKDIR /var/www/html/
 
-EXPOSE $PORT
+EXPOSE 3000
 
-CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t /var/www/html/"]
+CMD sh -c "php -S 0.0.0.0:${PORT:-3000} -t /var/www/html/"
