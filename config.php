@@ -3,11 +3,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-$db_username = getenv('MYSQLUSER') ?: "root";
-$db_password = getenv('MYSQLPASSWORD') ?: "HzBBwukSlXPfElGCgnATtoLLXktehhRu";
-$host_name = getenv('MYSQLHOST') ?: "mysql.railway.internal";
-$db_name = getenv('MYSQLDATABASE') ?: 'railway';
-$port = getenv('MYSQLPORT') ?: "3306";
+$db_username = "root";
+$db_password = "HzBBwukSlXPfElGCgnATtoLLXktehhRu";
+$host_name = "mysql.railway.internal";
+$db_name = "railway";
+$port = "3306";
 $kunloc = new mysqli($host_name, $db_username, $db_password, $db_name, $port);
 mysqli_set_charset($kunloc, 'utf8mb4');
 if ($kunloc->connect_error) 
