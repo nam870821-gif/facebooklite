@@ -1,6 +1,7 @@
 <?php
-error_reporting(0);
-session_start(0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $db_username = getenv('MYSQLUSER') ?: "root";
 $db_password = getenv('MYSQLPASSWORD') ?: "";
