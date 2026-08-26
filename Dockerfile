@@ -1,7 +1,12 @@
-ARG CACHEBUST=1
 FROM php:8.2-cli
 
 RUN docker-php-ext-install mysqli
+
+ENV MYSQLHOST=mysql.railway.internal
+ENV MYSQLUSER=root
+ENV MYSQLPASSWORD=HzBBwukSlXPfElGCgnATtoLLXktehhRu
+ENV MYSQLDATABASE=railway
+ENV MYSQLPORT=3306
 
 COPY . /var/www/html/
 
