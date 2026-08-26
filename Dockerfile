@@ -2,15 +2,11 @@ FROM php:8.2-cli
 
 RUN docker-php-ext-install mysqli
 
-ENV MYSQLHOST=mysql.railway.internal
-ENV MYSQLUSER=root
-ENV MYSQLPASSWORD=HzBBwukSlXPfElGCgnATtoLLXktehhRu
-ENV MYSQLDATABASE=railway
-ENV MYSQLPORT=3306
-
 COPY . /var/www/html/
 
 WORKDIR /var/www/html/
+
+RUN echo "<?php \$c=mysqli_connect('mysql.railway.internal','root','HzBBwukSlXPfElGCgnATtoLLXktehhRu','railway',3306); if(\$c->connect_error){die(\$c->connect_error);} echo 'DB OK'; ?>" > /var/www/html/test_db.php
 
 EXPOSE 3000
 
