@@ -2,10 +2,10 @@
 error_reporting(0);
 session_start(0);
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-$db_username = getenv('DB_USERNAME') ?: "timanhtuanxyz_test";
-$db_password = getenv('DB_PASSWORD') ?: "timanhtuanxyz_test";
-$host_name = getenv('DB_HOST') ?: "localhost";
-$db_name = getenv('DB_NAME') ?: 'timanhtuanxyz_test';
+$db_username = getenv('MYSQLUSER') ?: "root";
+$db_password = getenv('MYSQLPASSWORD') ?: "";
+$host_name = getenv('MYSQLHOST') ?: "localhost";
+$db_name = getenv('MYSQLDATABASE') ?: 'railway';
 $kunloc = new mysqli($host_name, $db_username, $db_password, $db_name);
 mysqli_set_charset($kunloc, 'utf8mb4');
 if ($kunloc->connect_error) 
